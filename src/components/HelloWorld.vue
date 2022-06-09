@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="container"></div>
-    <div class="aaaa  animate__animated  animate__slideInLeft"></div>
+    <div class="AAAcontainer wow animate__animated animate__slideInLeft" data-wow-duration="2s" data-wow-delay="1s"></div>
   </div>
 </template>
 
@@ -20,12 +20,14 @@ export default {
       const editor = new E("#container")
       editor.config.height = 400
       editor.create()
+
+      // wow.js
       const wow = new this.$wow({
         boxClass: 'wow',
         animateClass: 'animate',
         offset: 0,
         mobile: true,
-        live: true
+        live: false
       })
       wow.init()
     })
@@ -34,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-.aaaa {
+.AAAcontainer {
   margin: 200px auto;
   width: 100px;
   background-color: red;

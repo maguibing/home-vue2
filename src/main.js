@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 import { WOW } from 'wowjs'
-// import '../node_modules/wowjs/css/libs/animate.css'
 import 'animate.css'
 
 Vue.prototype.$wow = WOW
