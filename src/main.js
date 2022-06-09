@@ -1,8 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
+import { WOW } from 'wowjs'
+// import '../node_modules/wowjs/css/libs/animate.css'
+import 'animate.css'
 
+Vue.prototype.$wow = WOW
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
+  render: (h) => h(App),
 }).$mount('#app')
