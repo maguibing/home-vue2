@@ -11,6 +11,7 @@
     "@wangeditor/editor-for-vue": "^1.0.1",
     "animate.css": "^4.1.1",
     "core-js": "^3.6.5",
+    "lodash": "^4.17.21",
     "vue": "^2.6.11",
     "wangeditor": "^4.7.15",
     "wowjs": "^1.1.3"

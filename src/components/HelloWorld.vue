@@ -4,7 +4,7 @@
     <div class="AAAcontainer wow animate__animated animate__slideInLeft" data-wow-duration="2s" data-wow-delay="1s"></div>
 
     <div class="container">
-      <div class="round"></div>
+      <div class="round">{{$lodash.get(goal,'name','张三')}}</div>
     </div>
   </div>
 </template>
@@ -30,7 +30,8 @@ import E from "wangeditor"
 export default {
   data () {
     return {
-
+      goal: {
+      }
     }
   },
 
