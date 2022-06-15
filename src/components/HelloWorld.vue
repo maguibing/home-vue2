@@ -1,56 +1,82 @@
 <template>
-  <div>
-    <div id="container"></div>
-    <div class="AAAcontainer wow animate__animated animate__slideInLeft" data-wow-duration="2s" data-wow-delay="1s"></div>
-
-    <div class="container">
-      <div class="round">{{$lodash.get(goal,'name','张三')}}</div>
-    </div>
+  <div class="box">
+    <ul class="container flex-row">
+      <li v-for="v in array" :key="v" :class="{active:v==active}" @click="active=v">{{v}}</li>
+    </ul>
+    <div class="line"></div>
   </div>
 </template>
-<style scoped>
-.container {
-  width: 800px;
-  height: 400px;
-  background-color: #11a8cd;
-  margin: 200px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container .round {
-  width: 220px;
-  height: 220px;
-  background: transparent url("../assets/images/round.png") no-repeat center
-    local;
-}
-</style>
+
 <script>
-import E from "wangeditor"
 export default {
+  name: "HelloWord",
   data () {
     return {
-      goal: {
-      }
+      active: 2022,
+      array: [2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014]
     }
   },
-
-  mounted () {
-    this.$nextTick(() => {
-      const editor = new E("#container")
-      editor.config.height = 400
-      editor.create()
-
-      // wow.js
-      const wow = new this.$wow({
-        boxClass: 'wow',
-        animateClass: 'animate',
-        offset: 0,
-        mobile: true,
-        live: false
-      })
-      wow.init()
-    })
-  }
 }
 </script>
+
+<style  scoped>
+.box {
+  width: 1200px;
+  margin: 200px auto;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  justify-content: space-between;
+}
+.container li {
+  padding: 0 10px;
+  position: relative;
+}
+.container li::after {
+  position: absolute;
+  content: "";
+  left: 24px;
+  top: 37px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+}
+.container li:hover {
+  cursor: pointer;
+}
+.line {
+  margin-top: 20px;
+  height: 2px;
+  width: 100%;
+  background-color: black;
+}
+
+.active {
+  color: red;
+}
+
+.active::after {
+  position: absolute;
+  content: "";
+  left: 24px;
+  top: 37px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red !important;
+}
+</style>
